@@ -2,7 +2,7 @@
 
 Personal portfolio site built with Vite, React, TypeScript, shadcn-ui and Tailwind CSS.
 
-**Live site:** https://laura-castilho.github.io
+**Live site:** https://lauracastilho.github.io
 
 ---
 
