@@ -3,8 +3,7 @@ import { ArrowRight, Code2, Linkedin, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-const AVATAR_URL =
-  "https://cdn.enter.pro/resources/uid_100488250/laura-avatar_89c1543c.png";
+const AVATAR_URL = "/laura-avatar.png";
 
 export function Hero() {
   const { t } = useTranslation();
@@ -98,7 +97,6 @@ export function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-primary/30 shadow-glow">
               <img
                 src={AVATAR_URL}
-                crossOrigin="anonymous"
                 alt="Laura Castilho"
                 className="aspect-square w-full object-cover"
               />
