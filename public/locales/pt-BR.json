@@ -4,7 +4,7 @@
   "nav.skills": "Habilidades",
   "nav.values": "Valores",
   "nav.experience": "Experiência",
-  "nav.education": "Educação",
+  "nav.education": "Formação",
   "nav.contact": "Contato",
 
   "hero.hello": "OLÁ, EU SOU",
@@ -102,7 +102,7 @@
   "experience.items.intern.desc.second": "Criei documentação técnica detalhada para novas funcionalidades, ajudando a integrar novos membros ao time.",
   "experience.items.intern.desc.third": "Desenvolvi scripts rotineiros em C# para automatizar tarefas de importação de dados, permitindo que o time sênior focasse em projetos prioritários.",
 
-  "education.title": "Educação",
+  "education.title": "Formação",
   "education.subtitle": "Meu caminho de aprendizado.",
   "education.items.ai.title": "Inteligência Artificial",
   "education.items.ai.period": "2025 – 2027",
