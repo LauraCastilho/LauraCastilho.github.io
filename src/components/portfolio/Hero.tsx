@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Code2, Linkedin, MessageCircle } from "lucide-react";
 
@@ -5,8 +6,41 @@ import { Button } from "@/components/ui/button";
 
 const AVATAR_URL = "/laura-avatar.png";
 
+function useTypewriter(text: string) {
+  const [count, setCount] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    setCount(0);
+    setDeleting(false);
+  }, [text]);
+
+  useEffect(() => {
+    if (!text) return;
+
+    if (!deleting && count === text.length) {
+      const timer = window.setTimeout(() => setDeleting(true), 4000);
+      return () => window.clearTimeout(timer);
+    }
+
+    if (deleting && count === 0) {
+      const timer = window.setTimeout(() => setDeleting(false), 450);
+      return () => window.clearTimeout(timer);
+    }
+
+    const timer = window.setTimeout(
+      () => setCount((c) => c + (deleting ? -1 : 1)),
+      deleting ? 40 : 90,
+    );
+    return () => window.clearTimeout(timer);
+  }, [count, deleting, text]);
+
+  return text.slice(0, count);
+}
+
 export function Hero() {
   const { t } = useTranslation();
+  const typedHello = useTypewriter(t("hero.hello"));
 
   return (
     <section
@@ -19,11 +53,11 @@ export function Hero() {
 
       <div className="container relative z-10 grid items-center gap-14 pb-20 pt-32 lg:grid-cols-2 lg:gap-10">
         <div className="flex flex-col items-start gap-6">
-          <div className="flex items-center gap-1.5 animate-fade-up">
+          <div className="flex min-h-6 items-center gap-1.5 animate-fade-up">
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-              {t("hero.hello")}
+              {typedHello}
             </span>
-            <span className="animate-pulse-glow text-lg font-bold text-primary">
+            <span className="animate-caret-blink text-lg font-bold text-primary">
               |
             </span>
           </div>

@@ -114,6 +114,10 @@ export default {
 					'0%, 100%': { transform: 'translate(0,0) scale(1)' },
 					'33%': { transform: 'translate(24px,-32px) scale(1.08)' },
 					'66%': { transform: 'translate(-24px,24px) scale(0.94)' }
+				},
+				'caret-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
 				}
 			},
 			animation: {
@@ -123,7 +127,8 @@ export default {
 				'orbit': 'orbit 28s linear infinite',
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
 				'fade-up': 'fade-up 0.7s ease-out both',
-				'blob': 'blob 14s ease-in-out infinite'
+				'blob': 'blob 14s ease-in-out infinite',
+				'caret-blink': 'caret-blink 1s step-end infinite'
 			}
 		}
 	},

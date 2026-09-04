@@ -190,3 +190,13 @@
     transform: translate(-24px, 24px) scale(0.94);
   }
 }
+
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
