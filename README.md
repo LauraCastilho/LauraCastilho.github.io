@@ -1,11 +1,11 @@
-<div align="center">
-  # Portfolio 💼
+
+  
+# Portfolio 💼
 
 This project is my personal portfolio website, built with ReactJS, TypeScript, Tailwind CSS and shadcn-ui to showcase my experience, skills and projects as a Full Stack Developer.
 
 🔗 [Live demo](https://lauracastilho.github.io)
 
-</div>
 
 ## 💻 Technologies
 
