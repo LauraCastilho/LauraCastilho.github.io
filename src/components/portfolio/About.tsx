@@ -1,12 +1,20 @@
 import { useTranslation } from "react-i18next";
-import { Linkedin } from "lucide-react";
+import { Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { fallbackLng, normalizeLanguage } from "@/i18n/config";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 export function About() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const currentLanguage =
+    normalizeLanguage(i18n.resolvedLanguage ?? i18n.language) ?? fallbackLng;
+  const resumeHref =
+    currentLanguage === "pt-BR"
+      ? "/Laura-Castilho-Curriculo.pdf"
+      : "/Laura-Castilho-Resume.pdf";
 
   return (
     <section id="about" className="scroll-mt-24 py-24">
@@ -25,12 +33,8 @@ export function About() {
             variant="glass"
             className="rounded-full px-7"
           >
-            <a
-              href="https://www.linkedin.com/in/laura-castilho/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Linkedin className="h-4 w-4" />
+            <a href={resumeHref} download>
+              <Download className="h-4 w-4" />
               {t("about.cta")}
             </a>
           </Button>
